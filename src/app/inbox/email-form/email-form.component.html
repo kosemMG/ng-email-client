@@ -1,0 +1,7 @@
+<form class="ui form" [formGroup]="emailForm">
+  <app-input [control]="emailForm.controls.to" inputType="email" label="To" [required]="true"></app-input>
+  <app-input [control]="emailForm.controls.from" inputType="email" label="From" [required]="true"></app-input>
+  <app-input [control]="emailForm.controls.subject" inputType="text" label="Subject" [required]="false"></app-input>
+  <app-input [control]="emailForm.controls.text" label="Content" controlType="textarea" [required]="true"></app-input>
+  <button class="ui button primary" [disabled]="emailForm.invalid" (click)="onSend()">Send</button>
+</form>

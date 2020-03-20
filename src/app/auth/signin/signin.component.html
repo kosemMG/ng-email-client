@@ -1,7 +1,7 @@
 <h3>Sign In</h3>
 <form class="ui form" [formGroup]="authForm" (ngSubmit)="onSubmit()">
-  <app-input inputType="text" label="Username" [control]="authForm.controls.username"></app-input>
-  <app-input inputType="password" label="Password" [control]="authForm.controls.password"></app-input>
+  <app-input inputType="text" label="Username" [control]="authForm.controls.username" [required]="true"></app-input>
+  <app-input inputType="password" label="Password" [control]="authForm.controls.password" [required]="true"></app-input>
   <div class="ui red basic label"
        *ngIf="authForm.controls.password.touched &&
               authForm.errors">

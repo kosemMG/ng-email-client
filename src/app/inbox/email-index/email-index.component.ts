@@ -14,7 +14,7 @@ export class EmailIndexComponent implements OnInit {
 
   public ngOnInit(): void {
     this.email.fetchAll().subscribe(emails => this.emails = emails);
-    console.log(this.emails);
+    console.log('Emails:', this.emails);
   }
 
 }

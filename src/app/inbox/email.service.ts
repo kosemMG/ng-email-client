@@ -26,4 +26,8 @@ export class EmailService {
   public fetchById(id: string): Observable<Email> {
     return this.http.get<Email>(this.emailUrl + id);
   }
+
+  public sendEmail(email: Email): Observable<{ status: string }> {
+    return this.http.post<{ status: string }>(this.emailUrl, email);
+  }
 }

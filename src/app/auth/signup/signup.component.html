@@ -1,9 +1,9 @@
 <h3>Create an Account</h3>
 
 <form (ngSubmit)="onSubmit()" [formGroup]="authForm" class="ui form">
-  <app-input inputType="text" label="Username" [control]="authForm.controls.username"></app-input>
-  <app-input inputType="password" label="Password" [control]="authForm.controls.password"></app-input>
-  <app-input inputType="password" label="Confirm Password" [control]="authForm.controls.passwordConfirmation"></app-input>
+  <app-input inputType="text" label="Username" [control]="authForm.controls.username" [required]="true"></app-input>
+  <app-input inputType="password" label="Password" [control]="authForm.controls.password" [required]="true"></app-input>
+  <app-input inputType="password" label="Confirm Password" [control]="authForm.controls.passwordConfirmation" [required]="true"></app-input>
   <div class="ui red basic label"
        *ngIf="authForm.controls.password.touched &&
               authForm.controls.passwordConfirmation.touched &&

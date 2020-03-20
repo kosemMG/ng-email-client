@@ -1,8 +1,10 @@
 <div class="field">
-  <label><span>* </span>{{ label }}</label>
-  <input [type]="inputType" [formControl]="control">
+  <label><span *ngIf="required">* </span>{{ label }}</label>
+  <input *ngIf="controlType === 'input'" [type]="inputType" [formControl]="control">
+  <textarea *ngIf="controlType === 'textarea'" [formControl]="control"></textarea>
   <div class="ui pointing red basic label" *ngIf="isInvalid">
     <p *ngIf="control.errors.required">Required.</p>
+    <p *ngIf="control.errors.email">Invalid email.</p>
     <p *ngIf="control.errors.minlength">
       {{ label}} is {{ control.errors.minlength.actualLength }} characters long
       but must be at least {{ control.errors.minlength.requiredLength }}.
